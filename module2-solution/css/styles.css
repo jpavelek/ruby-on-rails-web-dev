@@ -12,16 +12,16 @@ section {
 	border: 1px solid black;
 	background-color: #bbbbbb;
 	float: left;
-	margin-left: 30px;
+	margin-top: 20px;
 }
 
 .menutag {
 	border: 1px solid black;
-	padding: 4px;
+	padding: 8px;
 	float: right;
 	font-size: 125%;
-	width: 25%;
 	text-align: center;
+	width: 33%;
 }
 
 #pink_tag {
@@ -41,23 +41,39 @@ section {
 	padding: 8px;
 }
 
+.container {
+	margin-top: 20px;
+}
+
 /*** Desktop ***/
 @media (min-width: 992px) {
 	.item-desktop-3 {
-		width: 33%;
+		width: 30%;
+	}
+	section {
+		margin-left: 2.5%; /*** Magical number - three margins left, and we want one to remain on th right. 10/4 is 2.5 **/
 	}
 }
 
 /*** Tablet ***/
 @media (min-width: 768px) and (max-width: 991px) {
 	.item-tablet-6 {
-		width: 50%;
+		width: 45%;
+	}
+	.item-tablet-12 {
+		width: 93.66%;
+	}
+	section {
+		margin-left: 3.33%; /*** Magical number - two margins left, and we want one to remain on th right. 10/3 is 3.33 **/
 	}
 }
 
 /*** Mobile device ***/
 @media (max-width: 767px) {
 	.item-mobile-12 {
-		width: 100%;
+		width: 94%;
+	}
+	section {
+		margin-left: 3%
 	}
 }
