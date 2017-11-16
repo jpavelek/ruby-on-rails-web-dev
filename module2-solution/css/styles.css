@@ -72,7 +72,7 @@ section {
 	.item-tablet-12 {
 		width: 93.66%;
 	}
-	section {e
+	section {
 		margin-left: 3.33%; /*** Magical number - two margins left, and we want one to remain on the right. 10/3 is 3.33 **/
 	}
 }
