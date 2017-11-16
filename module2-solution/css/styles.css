@@ -13,15 +13,21 @@ section {
 	background-color: #bbbbbb;
 	float: left;
 	margin-top: 20px;
+	position: relative;
 }
 
 .menutag {
 	border: 1px solid black;
 	padding: 8px;
-	float: right;
 	font-size: 125%;
 	text-align: center;
 	width: 33%;
+	/* I think just floating it to the right is cleaner than absolute position + padding, but the instructions require absolute positioning
+	float: right;
+	*/
+	position: absolute;
+	top:0;
+	right: 0;
 }
 
 #pink_tag {
@@ -39,6 +45,7 @@ section {
 .lorem_text {
 	clear: right;
 	padding: 8px;
+	padding-top: 50px;  /* To make space for the missing absolutely positioned tag */
 }
 
 .container {
