@@ -20,6 +20,7 @@ section {
 	border: 1px solid black;
 	padding: 8px;
 	font-size: 125%;
+	font-weight: bold;
 	text-align: center;
 	width: 33%;
 	/* I think just floating it to the right is cleaner than absolute position + padding, but the instructions require absolute positioning
@@ -36,6 +37,7 @@ section {
 
 #red_tag {
 	background-color: red;
+	color: white;
 }
 
 #yellow_tag {
