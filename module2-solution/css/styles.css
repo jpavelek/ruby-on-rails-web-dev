@@ -60,7 +60,7 @@ section {
 		width: 30%;
 	}
 	section {
-		margin-left: 2.5%; /*** Magical number - three margins left, and we want one to remain on th right. 10/4 is 2.5 **/
+		margin-left: 2.5%; /*** Magical number - three margins left, and we want one to remain on the right. 10/4 is 2.5 **/
 	}
 }
 
@@ -72,8 +72,8 @@ section {
 	.item-tablet-12 {
 		width: 93.66%;
 	}
-	section {
-		margin-left: 3.33%; /*** Magical number - two margins left, and we want one to remain on th right. 10/3 is 3.33 **/
+	section {e
+		margin-left: 3.33%; /*** Magical number - two margins left, and we want one to remain on the right. 10/3 is 3.33 **/
 	}
 }
 
@@ -83,6 +83,6 @@ section {
 		width: 94%;
 	}
 	section {
-		margin-left: 3%
+		margin-left: 3% /*** Magical number - one margin left, and we want one to remain on the right. (100-94)/2 is 3 **/
 	}
 }
