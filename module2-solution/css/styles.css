@@ -29,6 +29,8 @@ section {
 	position: absolute;
 	top:0;
 	right: 0;
+	border-top: 0px;
+	border-right: 0px;
 }
 
 #pink_tag {
