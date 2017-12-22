@@ -3,7 +3,8 @@
 
 angular.module("NarrowItDownApp", [])
 .controller("NarrowItDownController", NarrowItDownController)
-.service("MenuSearchService", MenuSearchService);
+.service("MenuSearchService", MenuSearchService)
+.directive("foundItems", FoundItems);
 
 NarrowItDownController.$inject = ["MenuSearchService"];
 function NarrowItDownController(MenuSearchService) {
@@ -15,8 +16,7 @@ function NarrowItDownController(MenuSearchService) {
         var promise = MenuSearchService.getMatchedMenuItems(ctrl.text);
 
         promise.then(function (items) {
-            //TODO - code to push populate UI comes here
-
+            ctrl.found = items;
         })
         .catch(function (error) {
             console.log(error);
@@ -46,17 +46,33 @@ function MenuSearchService($http) {
             var foundItems =[];
             for (var item in result.data.menu_items) {
                 if (result.data.menu_items[item].description.indexOf(searchTerm) != -1) {
+                    
                     foundItems.push( {
                         name: result.data.menu_items[item].name,
-                        shortname: result.data.menu_items[item].shortname,
+                        shortname: result.data.menu_items[item].short_name,
                         description: result.data.menu_items[item].description
                     });
-                    //console.log("In service - found " + result.data.menu_items[item].name);
                 }
             }
             return foundItems;
         });
     };
 }
+
+function FoundItems() {
+    var ddo = {
+      templateUrl: 'listItem.html',
+      restrict: "E",
+      scope: {
+          foundItems: "<",
+          onRemove: "&"
+      },
+      bindToController: true,
+      controller: NarrowItDownController,
+      controllerAs: "ctrl"
+    };
+  
+    return ddo;
+  }
 
 })();

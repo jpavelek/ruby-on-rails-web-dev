@@ -1,0 +1,10 @@
+<div class="row row-content pull-left">
+    <ul class="list-group">
+        <li ng-repeat="item in ctrl.foundItems" class="list-group-item">
+            <h4>{{item.name}} <span class="label label-default pull-right">{{item.shortname}}</span></h4>
+            <p>{{item.description}}
+                <button type="button" class="btn btn-danger pull-right" ng-click="ctrl.onRemove({index: $index});">Remove</button>
+            </p>
+        </li>
+    </ul>
+</div>
