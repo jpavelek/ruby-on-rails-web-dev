@@ -13,20 +13,24 @@ function NarrowItDownController(MenuSearchService) {
     ctrl.found = [];
 
     ctrl.clicked = function() {
-        var promise = MenuSearchService.getMatchedMenuItems(ctrl.text);
+        if (ctrl.text === "") {
+            //If no search term, make list empty, displays "Nothing found"
+            ctrl.found = [];
+        } else {
+            //If have search term, go get items
+            var promise = MenuSearchService.getMatchedMenuItems(ctrl.text);
 
-        promise.then(function (items) {
-            ctrl.found = items;
-        })
-        .catch(function (error) {
-            console.log(error);
-        })
+            promise.then(function (items) {
+                ctrl.found = items;
+            })
+            .catch(function (error) {
+                console.log(error);
+            })
+        }
     }
 
     ctrl.removeItem = function (itemIndex) {
         ctrl.found.splice(itemIndex, 1);
-        console.log("Removing item " + itemIndex);
-        
     }
 
 }
@@ -34,14 +38,6 @@ function NarrowItDownController(MenuSearchService) {
 MenuSearchService.$inject = ["$http"];
 function MenuSearchService($http) {
     var service = this;
-
-    service.getListOfAllItems = function() {
-        var response = $http({
-                method: "GET",
-                url: "https://davids-restaurant.herokuapp.com/menu_items.json"
-                });
-        return response;
-    }
 
     service.getMatchedMenuItems = function(searchTerm) {
         var promise = $http({
