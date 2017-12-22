@@ -23,6 +23,12 @@ function NarrowItDownController(MenuSearchService) {
         })
     }
 
+    ctrl.removeItem = function (itemIndex) {
+        ctrl.found.splice(itemIndex, 1);
+        console.log("Removing item " + itemIndex);
+        
+    }
+
 }
 
 MenuSearchService.$inject = ["$http"];
