@@ -47,7 +47,7 @@ function MenuSearchService($http) {
         return promise.then(function(result) {
             var foundItems =[];
             for (var item in result.data.menu_items) {
-                if (result.data.menu_items[item].description.indexOf(searchTerm) != -1) {
+                if (result.data.menu_items[item].description.toLowerCase().indexOf(searchTerm) != -1) {
                     
                     foundItems.push( {
                         name: result.data.menu_items[item].name,
