@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Jakub's Restaurant ,enu browser</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body ng-app="MenuApp">
+    <ui-view></ui-view>
+
+    <!-- Common libs -->
+    <script src="angular.min.js"></script>
+    <script src="angular-ui-router.min.js"></script>
+
+    <!-- Modules -->
+    <script src="menuapp.module.js"></script>
+    <script src="data.module.js"></script>
+
+    <!-- Services -->
+    <script src="menudata.service.js"></script>
+
+    <!-- Components -->
+    <script src="items.component.js"></script>
+    <script src="categories.component.js"></script>
+    
+</body>
+</html>
