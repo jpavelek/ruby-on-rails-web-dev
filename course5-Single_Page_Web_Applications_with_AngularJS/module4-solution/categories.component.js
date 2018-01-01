@@ -2,7 +2,11 @@
 "use strict";
 
 angular.module("data").component("categories", {
-    templateUrl : ""
+    templateUrl: "./categories-main.template.html",
+    bindings: {
+        menuitems: "<"
+    }
+
 });
 
 })();
