@@ -1,6 +1,5 @@
 <div class="container">
     <form name="signUpForm" novalidate>
-        Form is valid? {{signUpForm.$valid}}
         <h2 class="col-xs-12">Register with us for a FREE newsletter!</h2>
         <div class="form-group col-xs-12 col-sm-6">
             <label for="firstname">First name</label>
@@ -40,4 +39,5 @@
             <button type="submit" class="btn btn-primary" ng-disabled="signUpForm.$invalid" ng-click="signupCtrl.validateFavourite()">Register</button>
         </div>
     </form>
+    <div class="text-success col-xs-12" ng-if="signupCtrl.saved">Your information has been saved</div>
 </div>
