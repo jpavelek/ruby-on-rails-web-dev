@@ -1,0 +1,23 @@
+<div class="container" ng-if="infoCtrl.haveinfo == null">
+    <h2>Not Signed Up Yet. <a ui-sref="public.signup">Sign up Now!</a></h2>
+</div>
+
+<div class="container" ng-hide="infoCtrl.haveinfo == null">
+    <div class="row">
+        <div class="col-xs-12 col-sm-6">
+            <h3>First name: {{infoCtrl.haveinfo.first}}</h3>
+            <h3>Last name: {{infoCtrl.haveinfo.last}}</h3>
+            <h3>Email: {{infoCtrl.haveinfo.email}}</h3>
+            <h3>Telephone: {{infoCtrl.haveinfo.tel}}</h3>
+            <h3>Favourite dish: {{infoCtrl.haveinfo.dish}}</h3>
+        </div>
+        <div class="col-xs-12 col-sm-6">
+                {{infoCtrl.basePath}}
+                {{infoCtrl.haveinfo.short_name}}
+            <img class="img-responsive" width="500" height="300" ng-src="{{infoCtrl.basePath}}/images/{{infoCtrl.haveinfo.short_name}}.jpg" alt="{{infoCtrl.haveinfo.name}}">
+            <h4>{{infoCtrl.haveinfo.name}}</h4>
+            <h4>{{infoCtrl.haveinfo.description}}</h4>
+        </div>
+    </div>
+
+</div>

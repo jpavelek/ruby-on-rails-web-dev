@@ -27,7 +27,7 @@ function MenuService($http, ApiPath) {
     });
   };
 
-  service.checkMenuItem = function (menuItemId) {
+  service.getMenuItem = function (menuItemId) {
     return $http.get(ApiPath + '/menu_items/' + menuItemId + '.json');
   }
 

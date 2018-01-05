@@ -11,7 +11,7 @@ function SignUpController(MenuService, UserPrefService) {
     $ctrl.saved = false;
 
     $ctrl.validateFavourite = function() {
-        MenuService.checkMenuItem($ctrl.favdish).then(function(response) {
+        MenuService.getMenuItem($ctrl.favdish).then(function(response) {
             $ctrl.favdish_valid = true;
             UserPrefService.save($ctrl.firstname, $ctrl.lastname, $ctrl.email, $ctrl.telno, $ctrl.favdish);
             $ctrl.saved = true;
