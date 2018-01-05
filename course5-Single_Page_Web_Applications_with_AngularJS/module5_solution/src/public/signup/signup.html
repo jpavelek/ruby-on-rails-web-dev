@@ -1,24 +1,42 @@
 <div class="container">
-    <form novalidate>
+    <form name="signUpForm" novalidate>
+        Form is valid? {{signUpForm.$valid}}
         <h2 class="col-xs-12">Register with us for a FREE newsletter!</h2>
         <div class="form-group col-xs-12 col-sm-6">
             <label for="firstname">First name</label>
-            <input type="text" class="form-control" id="firstname" placeholder="First name">
+            <input type="text" class="form-control" id="firstname" name="firstname" placeholder="First name"
+            ng-model="signupCtrl.firstname" required minlength="2">
+            <span ng-show="(signUpForm.firstname.$error.minlength || signUpForm.firstname.$error.required)
+            && signUpForm.firstname.$touched" class="help-block">First name shall be at least 2 characters long!</span>
         </div>
         <div class="form-group col-xs-12 col-sm-6">
             <label for="lastname">Last name</label>
-            <input type="text" class="form-control" id="lastname" placeholder="Last name">
+            <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Last name"
+            ng-model="signupCtrl.lastname" required minlength="2">
+            <span ng-show="(signUpForm.lastname.$error.minlength || signUpForm.lastname.$error.required)
+            && signUpForm.lastname.$touched" class="help-block">Last name shall be at least 2 characters long!</span>
         </div>
         <div class="form-group col-xs-12 col-sm-6">
             <label for="email">Email address</label>
-            <input type="email" class="form-control" id="email" placeholder="Email">
+            <input type="email" class="form-control" id="email" name="email" placeholder="Email"
+            ng-model="signupCtrl.email" required >
+            <span ng-if="signUpForm.email.$error.required && signUpForm.email.$touched" class="help-block">Email is required to sign up!</span>
+            <span ng-if="signUpForm.email.$error.email && signUpForm.email.$touched" class="help-block">Incorrect email format</span>
         </div>
         <div class="form-group col-xs-12 col-sm-6">
             <label for="telno">Telephone number</label>
-            <input type="tel" class="form-control" id="telno" placeholder="Telephone number">
+            <input type="tel" class="form-control" id="telno" name="telno" placeholder="Telephone number"
+            ng-model="signupCtrl.telno" required>
+            <span ng-if="signUpForm.telno.$error.required && signUpForm.telno.$touched" class="help-block">Telephone number is required</span>
+        </div>
+        <div class="form-group col-xs-12 col-sm-6">
+            <label for="favdish">Favourite dish?</label>
+            <input type="text" class="form-control" id="favdish" name="favdish" placeholder="Your favourite dish ID?"
+            ng-model="signupCtrl.favdish" required>
+            <span ng-if="signUpForm.favdish.$error.required && signUpForm.favdish.$touched" class="help-block">Favourite dish is required</span>
         </div>
         <div class="form-group col-xs-12">
-            <button type="submit" class="btn btn-primary">Register</button>
+            <button type="submit" class="btn btn-primary" ng-disabled="signUpForm.$invalid">Register</button>
         </div>
     </form>
 </div>
