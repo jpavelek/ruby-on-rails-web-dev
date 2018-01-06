@@ -12,11 +12,9 @@
             <h3>Favourite dish: {{infoCtrl.haveinfo.dish}}</h3>
         </div>
         <div class="col-xs-12 col-sm-6">
-                {{infoCtrl.basePath}}
-                {{infoCtrl.haveinfo.short_name}}
-            <img class="img-responsive" width="500" height="300" ng-src="{{infoCtrl.basePath}}/images/{{infoCtrl.haveinfo.short_name}}.jpg" alt="{{infoCtrl.haveinfo.name}}">
-            <h4>{{infoCtrl.haveinfo.name}}</h4>
-            <h4>{{infoCtrl.haveinfo.description}}</h4>
+            <img class="img-responsive" width="500" height="300" ng-src="{{infoCtrl.basePath}}/images/{{infoCtrl.menuItem.short_name}}.jpg" alt="{{infoCtrl.menuItem.name}}">
+            <h4>{{infoCtrl.menuItem.name}}</h4>
+            <h5>{{infoCtrl.menuItem.description}}</h5>
         </div>
     </div>
 
